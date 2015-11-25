@@ -26,3 +26,5 @@ trains = response['Trains']
 for train in trains:
     print json.dumps(train)
     print train['LocationName']
+    print train['DestinationName']
+    print train['Min']
