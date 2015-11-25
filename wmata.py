@@ -29,7 +29,8 @@ for train in trains:
 	if train['Group'] == '1':
 		#print train['LocationName'] + " To Glenmont via Noma"
 		print train['DestinationName'] + " " + train['Min']
-		print ""
+		
 	if train['Group'] == '2':
 		#print train['LocationName'] + " To Shady Grove via Metro Center"
 		print train['DestinationName'] + " " + train['Min']
+	print ""
