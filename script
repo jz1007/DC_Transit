@@ -1,0 +1,19 @@
+import http.client, urllib.request, urllib.parse, urllib.error, base64
+
+headers = {
+    # Request headers
+    'api_key': 'B03?api_key=919aca6de37440c8b9783f96d62f70e8',
+}
+
+params = urllib.parse.urlencode({
+})
+
+try:
+    conn = httplib.HTTPSConnection('api.wmata.com')
+    conn.request("GET", "/StationPrediction.svc/json/GetPrediction/{StationCodes}&%s" % params, "{body}", headers)
+    response = conn.getresponse()
+    data = response.read()
+    print(data)
+    conn.close()
+except Exception as e:
+    print("[Errno {0}] {1}".format(e.errno, e.strerror))
