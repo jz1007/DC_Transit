@@ -24,7 +24,14 @@ response = query("B03")
 trains = response['Trains']
 
 for train in trains:
-    print json.dumps(train)
+#    print json.dumps(train)
     print train['LocationName']
     print train['DestinationName']
     print train['Min']
+	
+#if response['Group'] == '1':
+#	print "To Glenmont"
+#	print train['Min']
+#else
+#	print "To Shady Grove"
+#	print train['Min']
