@@ -16,13 +16,15 @@ def query(station):
         conn.close()
     except Exception as e:
         print "Oh noz" + str(e)
-    print "I can't believe this is pulling data! Returning it now."
+    print "Returning data now..."
     print ""
     return json.loads(data)
 
 response = query("B03")
 
 trains = response['Trains']
+
+#####json.dumps(train['Group'],sort_keys=False) ####sorting??? sort by groups here
 
 for train in trains:
 	#print json.dumps(train)
