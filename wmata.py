@@ -15,8 +15,9 @@ def query(station):
         data = response.read()
         conn.close()
     except Exception as e:
-        print "Oh noes" + str(e)
-    print "Got some data! Returning it now."
+        print "Oh noz" + str(e)
+    print "I can't believe this is pulling data! Returning it now."
+    print ""
     return json.loads(data)
 
 response = query("B03")
@@ -24,5 +25,12 @@ response = query("B03")
 trains = response['Trains']
 
 for train in trains:
-    print json.dumps(train)
-    print train['LocationName']
+	#print json.dumps(train)
+	if train['Group'] == '1':
+		#print train['LocationName'] + " To Glenmont via Noma"
+		print "To Glenmont " + train['DestinationName'] + " " + train['Min']
+		
+	if train['Group'] == '2':
+		#print train['LocationName'] + " To Shady Grove via Metro Center"
+		print "To Shady Grove " + train['DestinationName'] + " " + train['Min']
+	print ""
