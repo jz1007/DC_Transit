@@ -30,9 +30,9 @@ for train in trains:
 	#print json.dumps(train)
 	if train['Group'] == '1':
 		#print train['LocationName'] + " To Glenmont via Noma"
-		print "To Glenmont " + " " + train['Min']
+		print "To Glenmont " + train['Min']
 		
 	if train['Group'] == '2':
 		#print train['LocationName'] + " To Shady Grove via Metro Center"
-		print "To Shady Grove " + " " + train['Min']
+		print "To Shady Grove " + train['Min']
 	print ""
