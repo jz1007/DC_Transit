@@ -24,7 +24,7 @@ response = query("B03")
 
 trains = response['Trains']
 
-#####json.dumps(train['Group'],sort_keys=False) ####sorting??? sort by groups here
+#########sorting??? sort by groups here
 
 for train in trains:
 	#print json.dumps(train)
