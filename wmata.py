@@ -20,7 +20,7 @@ def query(station):
     print ""
     return json.loads(data)
 
-response = query("B03")
+response = query("B03") #####this is on develop
 
 trains = response['Trains']
 
