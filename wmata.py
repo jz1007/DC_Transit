@@ -1,4 +1,4 @@
-import httplib, urllib, base64
+import httplib, urllib, base64, urllib2
 import json
 
 headers = {
@@ -20,7 +20,7 @@ def query(station):
     print ""
     return json.loads(data)
 
-response = query("B03") #####this is on develop
+response = query("B03")
 
 trains = response['Trains']
 
