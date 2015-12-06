@@ -1,4 +1,4 @@
-import httplib, urllib, base64
+import httplib, urllib, base64, urllib2
 import json
 import threading, time
 import datetime
@@ -22,17 +22,16 @@ def query(station):
     print ""
     return json.loads(data)
 
-response = query("B03") #####this is on develop
+response = query("B03")
 
 trains = response['Trains']
 
-#####sorting
-
 def f():
-	print "################"
+	print "****************"
+	print "Trains arriving at Union Station"
 	print datetime.datetime.now()
-	print "################"
-	
+	print "****************"
+	print ""
 	for train in trains:
 		#print json.dumps(train)
 		if train['Group'] == '1':
@@ -43,7 +42,6 @@ def f():
 			#print train['LocationName'] + " To Shady Grove via Metro Center"
 			print "To Shady Grove " + train['Min']
 		print ""
-
-	threading.Timer(5,f).start()
-
-f() 
+	threading.Timer(5, f).start()
+	
+f()
