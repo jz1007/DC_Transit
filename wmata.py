@@ -1,5 +1,7 @@
 import httplib, urllib, base64, urllib2
 import json
+import threading, time
+import datetime
 
 headers = {
     'api_key': '919aca6de37440c8b9783f96d62f70e8',
@@ -24,15 +26,24 @@ response = query("B03")
 
 trains = response['Trains']
 
-#########sorting??? sort by groups here
+#####sorting
 
-for train in trains:
-	#print json.dumps(train)
-	if train['Group'] == '1':
-		#print train['LocationName'] + " To Glenmont via Noma"
-		print "To Glenmont " + train['Min']
+def f():
+	print "################"
+	print datetime.datetime.now()
+	print "################"
+	
+	for train in trains:
+		#print json.dumps(train)
+		if train['Group'] == '1':
+			#print train['LocationName'] + " To Glenmont via Noma"
+			print "To Glenmont " + train['Min']
 		
-	if train['Group'] == '2':
-		#print train['LocationName'] + " To Shady Grove via Metro Center"
-		print "To Shady Grove " + train['Min']
-	print ""
+		if train['Group'] == '2':
+			#print train['LocationName'] + " To Shady Grove via Metro Center"
+			print "To Shady Grove " + train['Min']
+		print ""
+
+	threading.Timer(5,f).start()
+
+f() 
