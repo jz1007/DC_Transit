@@ -78,6 +78,6 @@ def f():
 		#print json.dumps(alert)
 		print ""
 		print "-" + alert['Description']
-	threading.Timer(5, f).start()
+	threading.Timer(15, f).start()
 	
 f()
