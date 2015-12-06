@@ -76,8 +76,8 @@ def f():
 	print "***Alerts***"
 	for alert in alerts:
 		#print json.dumps(alert)
-		print "-" + alert['Description']
 		print ""
+		print "-" + alert['Description']
 	threading.Timer(5, f).start()
 	
 f()
